@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: jdgambin.github.io
+Token: fe6aa6815de7d33cb6a88e3a41e4cdd1b693ffb82b55a087c47817a18d5ce248
