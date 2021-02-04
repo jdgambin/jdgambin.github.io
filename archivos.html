@@ -25,9 +25,13 @@
 	<h3>Documentos</h3>
 	<ul>
 	<li>
+	<code>
 	<a href="arc/ilustraciones-del-tao.txt">ilustraciones-del-tao.txt</a>
-	(transcripción del apéndice de <i>La abolición del hombre</i> de C. S.
-	Lewis)
+	</code>
+	<blockquote>
+	Transcripción del apéndice de <i>La abolición del hombre</i> de C. S.
+	Lewis.
+	</blockquote>
 	</li>
 	</ul>
 	<h3>Viejo software (2013-2017)</h3>
@@ -37,26 +41,195 @@
 	Pastebin.
 	</p>
 	<ul>
-	<li><a href="arc/spw.sh.txt">spw</a> (POSIX Shell, 2016-2017)</li>
-	<li><a href="arc/acm.sh.txt">acm</a> (POSIX Shell, 2016)</li>
-	<li><a href="arc/text2leet-fuzzer.sh.txt">text2leet-fuzzer</a>
-	(Bash, mayo 2014)</li>
-	<li><a href="arc/gyts.sh.txt">gyts</a> (Bash, mayo 2014)</li>
-	<li><a href="arc/slideshared.sh.txt">slideshared</a>
-	(Bash, feb. 2014)</li>
-	<li><a href="arc/lscustomizer.bat.txt">lscustomizer</a>
-	(Batch, ene. 2014)</li>
-	<li><a href="arc/geeksscript-kiddie-question-1.sh.txt">
-	geeksscript-kiddie-question-1</a>
-	(Bash, ene. 2014)</li>
-	<li><a href="arc/zexploiter-1.0.sh.txt">zexploiter 1.0</a>
-	(Bash, ene. 2014)</li>
-	<li><a href="arc/trinity-hacks-neo.sh.txt">trinity-hacks-neo</a>
-	(Bash, dic. 2013)</li>
-	<li><a href="arc/sysfail.cc.txt">sysfail</a>
-	(C++, dic. 2013)</li>
-	<li><a href="arc/zexploiter-0.01.sh.txt">zexploiter 0.01</a>
-	(Bash, dic. 2013)</li>
+	<li>
+	<a href="arc/spw.sh.txt">spw</a> (POSIX Shell, 2016-2017)<br>
+	<blockquote>
+	Este script es un wrapper para pacman, el gestor de paquetes de
+	ArchLinux y otras distribuciones, su función es instalar y desinstalar
+	paquetes, y a su vez guardar en archivos de texto separados (uno donde
+	registra los paquetes que instala y otro para los que desinstala)
+	los nombres de estos paquetes tal cual son dados por el usuario como
+	argumentos en la línea de comandos. Las variaciones del comando
+	«<code>pacman -Q*</code>» dan listas «imprecisas» de paquetes instalados
+	explícitamente (los miembros de los grupos de paquetes son listados
+	independientemente con la ausencia del nombre del grupo de paquetes,
+	pero solo me interesa recordar el nombre del grupo; tampoco me interesa
+	la lista de paquetes base). Encuentro más cómodo el registrar de manera
+	simple mis paquetes personales yo mismo, esto también facilita la
+	instalación de estos paquetes en el futuro con el comando
+	«<code>spw -i $(cat paquetes.txt | tr '\n' ' ')</code>» que puedo
+	ejecutar en un nuevo sistema usando una lista de paquetes de <i>spw</i>
+	(en el ejemplo, «paquetes.txt»). Las rutas de los archivos de texto
+	donde se guardan los nombres de cada paquete son configuradas en el
+	mismo código fuente del script por medio de la definición de las
+	variables <i>ilog</i> y <i>ulog</i> en las líneas 4 y 7. Para más
+	información (no mucha) <code>spw -h</code>.
+	</blockquote>
+	</li>
+	<li>
+	<a href="arc/acm.sh.txt">acm</a> (POSIX Shell, 2016)
+	<blockquote>
+	<p>
+	Este fue un pequeño experimento. El script recibe de entrada un
+	«archivo de configuración» y el nombre de un comando del sistema.
+	El archivo de configuración está compuesto por dos áreas, divididas por
+	la línea que tiene la cadena «args:». Después de esta línea, cada una de
+	las siguientes líneas se interpretan como argumentos para el comando del
+	sistema que se dió como parte de la entrada del mismo script, cada línea
+	será para <i>acm</i> los argumentos de una iteración de ejecución
+	distinta. Esta es la segunda área, el área de argumentos. La primera
+	área son todas las líneas que hay antes de «args:», en estas líneas hay
+	variables definidas de la forma «identificador=valor», y se invocan en
+	el área de argumentos (la segunda área) de la forma «$identificador»,
+	tal como las mismas variables de la shell. Este identificador será
+	remplazado por el valor de la variable cuando se ejecuta el script. En
+	última instancia <i>acm</i> ejecuta el comando del sistema dado para
+	cada una de las líneas de argumentos que encuentre en el área de
+	argumentos. Sé que no se entendió, mostraré unos ejemplos.
+	</p>
+	<p>
+	Primero debemos preparar el archivo de configuración:
+<pre style="border: 1px solid darkblue; padding: 5px">
+# Este es el archivo de configuración "conf.acm"
+# (y estos son comentarios que acm ignora).
+var=valor
+args:
+arg1
+arg2
+arg3
+arg4-tengo-$var\n
+</pre>
+	ahora probemos ejecutar <i>acm</i> alimentando varios comandos del
+	sistema y veamos su salida:
+<pre style="border: 1px solid darkgreen; padding: 5px">
+$ acm conf.acm echo
+arg1
+arg2
+arg3
+arg4-tengo-valor\n
+$ acm conf.acm printf
+arg1arg2arg3arg4-tengo-valor
+$ ls
+conf.acm
+$ acm conf.acm touch
+$ ls
+arg1 arg2 arg3 'arg4-tengo-valor\n' conf.acm
+</pre>
+	El siguiente es un ejemplo de como usaba <i>acm</i> para hacer copias de
+	respaldo de archivos específicos de mi sistema, aquí muestro el
+	contenido de mi archivo <code>copy.acm</code>:
+<pre style="border: 1px solid darkblue; padding: 5px">
+dest=/storage/backup/configs
+
+args:
+
+-r /home/jdg/.config/zathura/        $dest/dotconfig
+-r /home/jdg/.config/termite/        $dest/dotconfig
+-r /home/jdg/.config/qutebrowser/    $dest/dotconfig
+
+/home/jdg/.stumpwmrc                 $dest
+/home/jdg/.vimrc                     $dest
+/home/jdg/.tmux.conf                 $dest
+/home/jdg/.packages                  $dest
+/home/jdg/.oldpackages               $dest
+/home/jdg/.zshrc                     $dest
+/home/jdg/.zprofile                  $dest
+/home/jdg/.xmodmap                   $dest
+/home/jdg/.jdg-aliases               $dest
+/home/jdg/.xinitrc                   $dest
+
+/storage/stuff/pwdbs/database.kdb    $dest
+/etc/hosts                           $dest
+</pre>
+	Para ejecutarlo usaba «<code>acm copy.acm cp -v</code>». ¡Y me servía
+	muy bien! :)
+	</p>
+	</blockquote>
+	</li>
+	<li>
+	<a href="arc/text2leet-fuzzer.sh.txt">text2leet-fuzzer</a>
+	(Bash, mayo 2014)
+	<blockquote>
+	Este fue un insignificante «fuzzer» que hice para probar un programa en
+	C que había escrito para traducir del ASCII al lenguaje «l33t», este
+	programa <i>text2leet</i> no sobrevivió a mi falta de aprecio por los
+	«pequeños documentos históricos personales».
+	</blockquote>
+	</li>
+	<li>
+	<a href="arc/gyts.sh.txt">gyts</a> (Bash, mayo 2014)
+	<blockquote>
+	Obtener los enlaces de las imagenes miniatura para un video de
+	YouTube cualquiera.
+<pre style="border: 1px solid darkgreen; padding: 5px">
+$ gyts -a -u https://www.youtube.com/watch?v=JH3T6YwwU9s
+http://img.youtube.com/vi/JH3T6YwwU9s/0.jpg
+http://img.youtube.com/vi/JH3T6YwwU9s/1.jpg
+http://img.youtube.com/vi/JH3T6YwwU9s/2.jpg
+http://img.youtube.com/vi/JH3T6YwwU9s/3.jpg
+http://img.youtube.com/vi/JH3T6YwwU9s/default.jpg
+http://img.youtube.com/vi/JH3T6YwwU9s/hqdefault.jpg
+http://img.youtube.com/vi/JH3T6YwwU9s/mqdefault.jpg
+http://img.youtube.com/vi/JH3T6YwwU9s/sddefault.jpg
+http://img.youtube.com/vi/JH3T6YwwU9s/maxresdefault.jpg
+</pre>
+	Para ver todas las opciones ejecutar  «<code>gyts -h</code>».
+	</blockquote>
+	</li>
+	<li>
+	<a href="arc/slideshared.sh.txt">slideshared</a> (Bash, feb. 2014)
+	<blockquote>
+	Descargar y convertir publicaciones de <i>slideshare.net</i>, la
+	conversión a PDF de esta versión (había hecho una mejor versión de este
+	script que perdí) es muy ineficiente y no sé si el script todavía
+	funcione.
+	</blockquote>
+	</li>
+	<li>
+	<a href="arc/lscustomizer.bat.txt">lscustomizer</a> (Batch, ene. 2014)
+	<blockquote>
+	Un script Batch para Windows 7 que remplaza la imagen de fondo de la
+	pantalla de inicio de sesión.
+	</blockquote>
+	</li>
+	<li>
+	<a href="arc/geeksscript-kiddie-question-1.sh.txt">
+	geeksscript-kiddie-question-1</a> (Bash, ene. 2014)
+	<blockquote>
+	Un script para un concurso de una página india de Facebook (en ese
+	tiempo aún tenía página de Facebook) en el que participé cuando
+	comenzaba a programar scripts de Bash, gané el concurso pero no sé si
+	participó otra persona a parte de mi (el premio era un bono canjeable en
+	tiendas indias).
+	</blockquote>
+	</li>
+	<li>
+	<a href="arc/zexploiter-1.0.sh.txt">zexploiter 1.0</a> (Bash, ene. 2014)
+	<blockquote>
+	Esta es una interesante historia que redactaré después.
+	</blockquote>
+	</li>
+	<li>
+	<a href="arc/trinity-hacks-neo.sh.txt">trinity-hacks-neo</a> (Bash, dic.
+	2013)
+	<blockquote>
+	Mi intento de replicar los mensajes que Trinity muestra a Neo en la
+	pantalla de su computadora al inicio de <i>The Matrix</i>.
+	</blockquote>
+	</li>
+	<li>
+	<a href="arc/sysfail.cc.txt">sysfail</a> (C++, dic. 2013)
+	<blockquote>
+	Para entenderlo hay que verlo, crearé un GIF después.
+	</blockquote>
+	</li>
+	<li>
+	<a href="arc/zexploiter-0.01.sh.txt">zexploiter 0.01</a> (Bash, dic.
+	2013)
+	<blockquote>
+	Como he dicho más arriba.
+	</blockquote>
+	</li>
 	</ul>
 	<br>
 	<hr>
