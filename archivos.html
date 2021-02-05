@@ -61,11 +61,10 @@
 	los nombres de estos paquetes tal cual son dados por el usuario como
 	argumentos en la línea de comandos. Las variaciones del comando
 	«<code>pacman -Q*</code>» dan listas «imprecisas» de paquetes instalados
-	explícitamente (los miembros de los grupos de paquetes son listados
-	independientemente con la ausencia del nombre del grupo de paquetes,
-	pero solo me interesa recordar el nombre del grupo; tampoco me interesa
-	la lista de paquetes base). Encuentro más cómodo el registrar de manera
-	simple mis paquetes personales yo mismo, esto también facilita la
+	explícitamente (los paquetes miembros de un grupo son listados de forma
+	independiente con ausencia del propio nombre del grupo de paquetes; y
+	también se listan los paquetes base). Encuentro más cómodo registrar de
+	manera simple mis paquetes personales yo mismo, esto también facilita la
 	instalación de estos paquetes en el futuro con el comando
 	«<code>spw -i $(cat paquetes.txt | tr '\n' ' ')</code>» que puedo
 	ejecutar en un nuevo sistema usando una lista de paquetes de <i>spw</i>
@@ -81,22 +80,27 @@
 	acm</a> (POSIX Shell, 2016)
 	<blockquote>
 	<p>
-	Este fue un pequeño experimento. El script recibe de entrada un
+	Este fue un pequeño experimento. El script recibe como entrada un
 	«archivo de configuración» y el nombre de un comando del sistema.
-	El archivo de configuración está compuesto por dos áreas, divididas por
-	la línea que tiene la cadena «args:». Después de esta línea, cada una de
-	las siguientes líneas se interpretan como argumentos para el comando del
-	sistema que se dió como parte de la entrada del mismo script, cada línea
-	será para <i>acm</i> los argumentos de una iteración de ejecución
-	distinta. Esta es la segunda área, el área de argumentos. La primera
-	área son todas las líneas que hay antes de «args:», en estas líneas hay
-	variables definidas de la forma «identificador=valor», y se invocan en
-	el área de argumentos (la segunda área) de la forma «$identificador»,
-	tal como las mismas variables de la shell. Este identificador será
-	remplazado por el valor de la variable cuando se ejecuta el script. En
-	última instancia <i>acm</i> ejecuta el comando del sistema dado para
-	cada una de las líneas de argumentos que encuentre en el área de
-	argumentos. Sé que no se entendió, mostraré unos ejemplos.
+	El archivo de configuración se compone en dos áreas, que se dividen por
+	una línea que contiene exclusivamente la cadena «args:». El área 2
+	(el área de argumentos) es cada una de las líneas bajo «args:», las
+	cuales son interpretadas como argumentos para el comando del sistema que
+	se da como parte de la entrada del propio script, más precisamente, para
+	<i>acm</i> cada línea del área 2 son argumentos de distintas iteraciones
+	de ejecución de dicho comando (sean <code>L1, ... , LN</code> todas las
+	<code>N</code> líneas del área 2, entonces <i>acm</i> ejecuta
+	la secuencia «<code>comando L1; comando L2; ... comando LN</code>»).
+	Por otra parte, el área 1 (área de variables) es todas las líneas que
+	hay antes del divisor «args:», en estas líneas hay variables definidas
+	de la forma «identificador=valor» que se invocan en el área de
+	argumentos (el área 2) de la forma «$identificador», igual que las
+	variables de la shell. Este identificador se remplaza por el valor
+	de la variable cuando se ejecuta el script. En conclusión, <i>acm</i>
+	ejecuta un comando cualquiera de manera iterada, alimentando una a una
+	en cada iteración las líneas de argumentos provistas en el área de
+	argumentos del archivo de configuración. Sé que no se entendió, mostraré
+	unos ejemplos.
 	</p>
 	<p>
 	Primero debemos preparar el archivo de configuración:
@@ -105,7 +109,7 @@
 # (y estos son comentarios que acm ignora).
 var=valor
 args:
-arg1
+arg0 arg1
 arg2
 arg3
 arg4-tengo-$var\n
@@ -114,17 +118,17 @@ arg4-tengo-$var\n
 	sistema y veamos su salida:
 <pre style="border: 1px solid darkgreen; padding: 5px">
 $ acm conf.acm echo
-arg1
+arg0 arg1
 arg2
 arg3
 arg4-tengo-valor\n
 $ acm conf.acm printf
-arg1arg2arg3arg4-tengo-valor
+arg0 arg1arg2arg3arg4-tengo-valor
 $ ls
 conf.acm
 $ acm conf.acm touch
 $ ls
-arg1 arg2 arg3 'arg4-tengo-valor\n' conf.acm
+arg0 arg1 arg2 arg3 'arg4-tengo-valor\n' conf.acm
 </pre>
 	El siguiente es un ejemplo de como usaba <i>acm</i> para hacer copias de
 	respaldo de archivos específicos de mi sistema, aquí muestro el
