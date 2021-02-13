@@ -1,0 +1,116 @@
+# Organización del tiempo
+
+Fuente:
+	"Knuth: Retirement"
+	(https://www-cs-faculty.stanford.edu/~knuth/retd.html),
+	traducción de jdg.
+
+Contenido:
+	Me retiré temprano porque me di cuenta de que necesitaría al menos 20
+	años de trabajo a tiempo completo para completar «The Art of Computer
+	Programming» (TAOCP), que siempre he visto como el proyecto más
+	importante de mi vida. [...] La única manera de ganar suficiente
+	eficiencia para completar TAOCP es operar en «modo por lotes», es decir,
+	concentrándome intensa e ininterrumpidamente en un solo tema a la vez,
+	en lugar de tratar mentalmente con una serie de temas distintos de forma
+	intermitente y simultánea.
+
+Nota:
+	Esto obviamente implica reservar un bloque de tiempo en el día donde se
+	excluye toda posible actividad excepto la tarea precisamente delimitada
+	en la que se desea trabajar sin interrupciones. Este me parece el único
+	método posible para organizar el tiempo cuando se desea trabajar en algo
+	serio y cognitivamente exigente. No hay alternativa a la autolimitación
+	y a la devoción total.
+
+# Fortalecimiento de las habilidades cognitivas
+
+Fuente:
+	"Deep Questions with Cal Newport, Ep. 2"
+	(https://www.calnewport.com/podcast/),
+	transcripción, edición y traducción de jdg.
+
+Contenido:
+	¿Cuáles son algunas técnicas para mejorar la concentración de alguien
+	con atención débil?
+
+	Creo que una buena analogía cuando pensamos en mejorar nuestra capacidad
+	de concentración es una triatlón. Si dijera que te voy a convertir en un
+	triatleta sobresaliente, esperarías que hubieran dos aspectos
+	involucrados. Primero estaría la aptitud general, te diría que
+	tenemos que reacondicionar tu dieta, tienes que dormir más, tienes que
+	tomar más agua, tienes que ser una persona más saludable, etc. Estas son
+	las bases sobre las cuales puedes esperar ser realmente capaz de
+	competir en una triatlón. La otra cosa que haríamos sería el
+	entrenamiento concreto para las actividades específicas que componen el
+	evento, es decir, nadar, montar bicicleta, correr, etc. Lo mismo aplica
+	para la concentración y la atención en los niveles más exigentes. Debes
+	trabajar en tu aptitud cognitiva general y debes específicamente
+	entrenar tu habilidad de concentración en el tipo de actividades
+	concretas en las que deseas aplicarte. Entrenamiento general y
+	entrenamiento específico.
+
+	¿Cómo entrenas tu aptitud cognitiva general? Hay muchas cosas diferentes
+	que pueden ayudar. Aceptar el aburrimiento es útil, y con esto quiero
+	decir acostumbrarse a la idea de que regularmente te encontraras
+	aburrido y buscando estímulos novedosos para romper el aburrimiento,
+	pero en vez de sacar tu teléfono o ponerte unos audífonos, en su lugar
+	simplemente puedes permanecer aburrido. Ahora, no estoy diciendo que
+	debas hacer esto todo el tiempo. No estoy diciendo que debas estar
+	aburrido constantemente, pero pienso que deberías estar aburrido
+	regularmente. ¿Por qué? Porque si no participas en este tipo de
+	entrenamiento tu mente va a formar una conexión pavloviana que dice
+	«el aburrimiento significa estímulos» y luego cuando viene el momento de
+	concentrarse en algo realmente difícil, vas a ser incapaz de hacerlo
+	porque tu mente dice «¡hey, esto es aburrido! No hay estímulos nuevos,
+	estamos haciendo la misma cosa una y otra vez. Esto no me gusta, miremos
+	el teléfono, miremos las redes sociales, revisemos el correo» y por
+	tanto es muy difícil concentrarse cuando tu mente nunca práctica estar
+	aburrida. Pienso que leer es el equivalente cognitivo de comer bastante
+	bien. Entre más tiempo te ocupes leyendo, ya sea ficción o no ficción,
+	mejor será tu salud cognitiva, especialmente cuando hablamos de querer
+	alcanzar niveles élite de concentración. Realmente fuerza a muchas áreas
+	distintas de la mente a trabajar juntas para mantener la atención y
+	hacer procesamiento interconectado. El centro de imágenes le habla al
+	centro verbal el cual habla al banco de memoria que a su vez le habla a
+	la memoria sensorial, todos trabajan juntos, es ejercitar todas estas
+	conexiones distintas. Esto te acostumbra a mantener tu concentración
+	fija en un solo objetivo. Todo esto es muy útil. Así que si te
+	encuentras habitualmente aburrido y lees tanto como absolutamente puedas
+	tolerar o incluir en tu rutina, tu aptitud cognitiva general va a llegar
+	a donde necesita estar para que puedas concentrarte a un nivel de élite.
+
+	¿Cómo entrenas para las actividades específicas donde quieres aplicar tu
+	concentración? Una cosa que recomendaría son los «esprintes cognitivos»,
+	lo que debes hacer es practicar trabajando en algo tan intensamente como
+	sea posible durante una cantidad muy limitada de tiempo. Usa un
+	temporizador, me parece una excelente manera de progresar en esto.
+	Empieza con 20 minutos, eso está bien. Elije la tarea en la que quieres
+	mejorar, realiza esta actividad durante 20 minutos, la prioridad durante
+	estos 20 minutos es sostener una atención constante, intensa y
+	centrada como un láser. Si divagas y haces algo más, ojeas el
+	teléfono, las redes sociales, lo que sea, entonces no cuenta y debes
+	comenzar de nuevo y reiniciar el temporizador. Así que es una prueba
+	difícil pero no es muy larga. Lo que ocurre es que te acostumbras a la
+	sensación de operar con tu mente en un alto nivel de intensidad. La
+	mayoría de la gente simplemente no está acostumbrada a esto. Es como
+	si salieras ahora mismo afuera de tu casa y comenzaras a esprintar tan
+	rápido como fuera posible, no vas a llegar muy lejos a menos de que
+	sea algo para lo que ya estas entrenando. Tu cuerpo va a decir
+	«¡¿Què estamos haciendo?! Esto es terrible, ¡vamos a vomitar!», pero si
+	prácticas tus esprintes solo un poco cada día y aumentas la intensidad
+	gradualmente, en seis meses puedes estar haciendo intervalos de 400
+	metros en la pista. Concentrarse de manera increíblemente fuerte en algo
+	cognitivo es como esprintar fuertemente en la pista de atletismo. Claro
+	que podemos hacerlo, es bueno hacerlo, pero si no entrenas para ello, no
+	te irá muy bien la primera vez. Así que recomiendo estos esprintes
+	cognitivos. Una vez te sientas cómodo con 20 minutos, aumenta a 30,
+	cuando te sientas cómodo con 30, avanza a los 40, y así sucesivamente.
+	Tu objetivo es llegar hasta los 90 minutos.
+
+	Si puedes hacer 90 minutos de concentración máxima ininterrumpida y al
+	mismo tiempo tienes tu aptitud cognitiva general en muy buen estado, te
+	sientes cómodo con el aburrimiento, estás leyendo todo el tiempo, creo
+	que puedes realizar un gran cambio en tus habilidades de concentración
+	en, digamos, un periodo de seis meses. Así que es trabajo difícil, pero
+	vale totalmente la pena hacerlo.
