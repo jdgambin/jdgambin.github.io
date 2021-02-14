@@ -1,8 +1,31 @@
+@font-face {
+	font-family: texgyrepagella;
+	src: url(texgyrepagella-regular.otf);
+}
+
+@font-face {
+	font-family: texgyrepagella;
+	src: url(texgyrepagella-bold.otf);
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: texgyrepagella;
+	src: url(texgyrepagella-italic.otf);
+	font-style: italic;
+}
+
+@font-face {
+	font-family: texgyrepagella;
+	src: url(texgyrepagella-bolditalic.otf);
+	font-weight: bold;
+	font-style: italic;
+}
+
 body {
 	color: #c7c7c7;
 	background: #161616;
-	font-family: "Palatino Linotype";
-	src: url(palatino-linotype.ttf);
+	font-family: texgyrepagella;
 }
 
 .pad {
