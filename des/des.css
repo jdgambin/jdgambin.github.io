@@ -23,13 +23,13 @@
 }
 
 body {
-	color: #c7c7c7;
-	background: #161616;
+	color: #D0D3D4;
+	background: #17202A;
 	font-family: texgyrepagella;
 }
 
 .pad {
-	max-width: 90%;
+	max-width: 77%;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 1em;
