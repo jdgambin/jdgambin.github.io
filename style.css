@@ -44,10 +44,13 @@ body {
 }
 
 .column {
-	float: left;
-	width: 33.33%;
-	padding-top: 10px;
-	padding-right: 0px;
+	position: absolute;
+	left: 50%;
+	top: 55%;
+	width: 50%;
+	transform: translate(-50%, -50%);
+	padding-bottom: 20px;
+/*	padding-right: 0px; */
 }
 
 .row:after {
